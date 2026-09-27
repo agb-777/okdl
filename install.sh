@@ -33,4 +33,4 @@ exec "\$PYTHON_BIN" "\$SCRIPT_PATH" "\$@"
 EOF
 chmod +x /usr/local/bin/okdl
 
-echo "[+] okdl has been successfully installed. Run 'okdl <url>' to get started."
+echo "[+] okdl has been successfully installed."
