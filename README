@@ -1,0 +1,35 @@
+What is okdl?
+-------------
+okdl is a command-line tool for downloading videos from OK.ru. It is a wrapper around yt-dlp that automatically normalizes OK.ru URLs and applies a runtime fix for a known JSON parsing bug in the OK.ru extractor.
+
+Installation
+------------
+1. sudo apt update
+2. sudo apt install -y curl ffmpeg python3 python3-venv
+3. python3 -m venv .venv
+4. source .venv/bin/activate
+5. pip install --upgrade pip
+6. pip install yt-dlp
+7. curl -O https://raw.githubusercontent.com/filemjepang/okdl/main/okdl.py
+8. chmod +x okdl.py
+
+Usage
+-----
+python3 okdl.py -u <URL> [OPTIONS]
+
+Basic Examples
+--------------
+- List available formats:
+  python3 okdl.py -u "https://ok.ru/video/91456710947561" -F
+- Download best quality:
+  python3 okdl.py -u "https://ok.ru/video/91456710947561"
+- Download a specific format by ID:
+  python3 okdl.py -u "https://ok.ru/video/91456710947561" -f hls-3014
+- Download with a custom filename:
+  python3 okdl.py -u "https://ok.ru/video/91456710947561" -o "my_video.%(ext)s"
+- Enable verbose output:
+  python3 okdl.py -u "https://ok.ru/video/91456710947561" -v
+
+License
+-------
+MIT License
