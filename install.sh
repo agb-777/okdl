@@ -6,7 +6,7 @@ if [ "$EUID" -ne 0 ]; then
     exit 1
 fi
 
-INSTALL_DIR="$HOME/.okdl"
+INSTALL_DIR="/opt/okdl"
 
 apt update
 apt install -y curl ffmpeg python3 python3-venv
@@ -15,11 +15,13 @@ mkdir -p "$INSTALL_DIR"
 
 python3 -m venv "$INSTALL_DIR/.venv"
 
-"$INSTALL_DIR/.venv/bin/pip" install --upgrade pip --quiet
-"$INSTALL_DIR/.venv/bin/pip" install yt-dlp --quiet
+"$INSTALL_DIR/.venv/bin/pip" install --upgrade pip
+"$INSTALL_DIR/.venv/bin/pip" install yt-dlp
 
 curl -sSL -o "$INSTALL_DIR/okdl.py" https://raw.githubusercontent.com/agb-777/okdl/main/okdl.py
 chmod +x "$INSTALL_DIR/okdl.py"
+
+chmod -R a+rX "$INSTALL_DIR"
 
 tee /usr/local/bin/okdl > /dev/null <<EOF
 #!/usr/bin/env bash
