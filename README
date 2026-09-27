@@ -23,6 +23,10 @@ Basic Examples
 - Enable verbose output:
   python3 okdl.py -u "https://ok.ru/video/91456710947561" -v
 
+Uninstall
+---------
+curl -sSL https://raw.githubusercontent.com/agb-777/okdl/main/uninstall.sh | sudo bash
+
 License
 -------
 MIT License
