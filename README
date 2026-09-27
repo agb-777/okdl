@@ -10,7 +10,7 @@ Installation
 4. source .venv/bin/activate
 5. pip install --upgrade pip
 6. pip install yt-dlp
-7. curl -O https://raw.githubusercontent.com/filemjepang/okdl/main/okdl.py
+7. curl -O https://raw.githubusercontent.com/agb-777/okdl/main/okdl.py
 8. chmod +x okdl.py
 
 Usage
