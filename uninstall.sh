@@ -6,7 +6,7 @@ if [ "$EUID" -ne 0 ]; then
     exit 1
 fi
 
-INSTALL_DIR="$HOME/.okdl"
+INSTALL_DIR="/opt/okdl"
 
 rm -f /usr/local/bin/okdl
 rm -rf "$INSTALL_DIR"
